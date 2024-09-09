@@ -64,6 +64,14 @@ public class Magpie {
 				response = "Tell me more about your pets.";
 			lastTopic = "pets";
 		}
+		else if (statement.indexOf("Mr. Adiletta") != -1 || statement.indexOf("Mr. A") != -1) {
+			if(lastTopic.equals("teachers")) {
+				response = "Talking about Mr. A is fun";
+			} else {
+				response = "Tell me more about your cool AP Comp Sci teacher";
+			}
+			lastTopic = "teacher";
+		}
 		else
 		{
 			response = getRandomResponse();
