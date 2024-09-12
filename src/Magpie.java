@@ -53,24 +53,15 @@ public class Magpie {
 		else if(statement.length() == 0) {
 			response = "Say something, please";
 		}
-		else if (statement.indexOf("cat") >= 0
+		else if(statement.indexOf("guppy") != -1
 				|| statement.indexOf("dog") != -1
-				|| statement.indexOf("fish") >= 0
-				|| statement.indexOf("hamster") >= 0)
-		{
-			if(lastTopic.equals("pets")){
-				response = "I never get tired of talking about pets.";
-			}else 
-				response = "Tell me more about your pets.";
-			lastTopic = "pets";
-		}
-		else if (statement.indexOf("Mr. Adiletta") != -1 || statement.indexOf("Mr. A") != -1) {
-			if(lastTopic.equals("teachers")) {
-				response = "Talking about Mr. A is fun";
-			} else {
-				response = "Tell me more about your cool AP Comp Sci teacher";
-			}
-			lastTopic = "teacher";
+				|| statement.indexOf("cat") != -1
+				|| statement.indexOf("hamster") != -1
+				|| statement.indexOf("bird") != -1
+				|| statement.indexOf("shrimp") != -1
+				|| statement.indexOf("bunny") != -1
+				|| statement.indexOf("komodo dragon") != -1){
+			response = "Tell me more about these pets";
 		}
 		else
 		{
