@@ -36,6 +36,7 @@ public class Magpie {
 	 * @return a response based on the rules given
 	 */
 	public String getResponse(String statement) {
+		String original = statement;
 		statement = statement.toLowerCase().strip();
 		String response = "";
 		if (findKeyword(statement, "no") >= 0) {
@@ -71,7 +72,22 @@ public class Magpie {
 		else if (findKeyword(statement, "adiletta") != -1
 				|| findKeyword(statement, "mr. a") != -1) {
 			response = "He sounds like a good teacher";
-		} else {
+		} 
+		// --I ___ YOU--
+		else if(findKeyword(statement, "i") != -1 
+				&& findKeyword(statement, "you") > findKeyword(statement, "i ")){
+			response = "Why do you " + original.substring(statement.indexOf("i ") + 2, statement.lastIndexOf("you")) + "me?";
+		}
+		// --I LIKE --
+		else if(findKeyword(statement, "i like") != -1) {
+			response = "What do you like about " + original.substring(statement.indexOf("i like") + 7, original.length()) + "?";
+		}
+		// --I WANT--
+		else if(findKeyword(statement, "i want") != -1) {
+			response = "Would you really be happy if you had " + original.substring(statement.indexOf("i want") + 7, original.length()) + "?";
+		}
+
+		else {
 			response = getRandomResponse();
 		}
 		return response;
