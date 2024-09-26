@@ -75,7 +75,7 @@ public class Magpie {
 		} 
 		// --I ___ YOU--
 		else if(findKeyword(statement, "i") != -1 
-				&& findKeyword(statement, "you") > findKeyword(statement, "i ")){
+				&& findKeyword(statement, "you") > findKeyword(statement, "i")){
 			response = "Why do you " + original.substring(statement.indexOf("i ") + 2, statement.lastIndexOf("you")) + "me?";
 		}
 		// --I LIKE --
